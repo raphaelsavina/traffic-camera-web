@@ -1,0 +1,18 @@
+# 400 Bad request:
+ErrorDocument 400 "Bad request."
+
+# 401 Authorization Required:
+ErrorDocument 401 "Authentication required."
+
+# 403 Forbidden:
+ErrorDocument 403 "Forbidden access."
+
+# 404 Not Found:
+ErrorDocument 404 "Page not found."
+
+# 500 Internal Server Error:
+ErrorDocument 500 "Server error."
+
+# 503 Service unavailable:
+
+Options +Indexes 

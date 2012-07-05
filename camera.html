@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Dublin Traffic Cams</title>
+	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+	<meta name="description" content="Traffic Cams Dublin" />
+	<meta name="keywords" content="Dublin, traffic, camera, livedrive, AA roadwatch, traffic cams" />
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+	<script src="js/jquery-1.6.1.min.js"></script>
+
+	<!--Database scripting, based on html5rocks example-->
+	<script src="js/database.js"></script>
+	
+	<!--Analytics-->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23963982-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	
+	<!-- Script to create tabs with rollover, insert all id as parameters -->
+	<script>
+	$(document).ready(function () {
+		$("#about, #home, #map").mouseover(function(){
+			$(this).addClass("rollover");
+		});
+		$("#about, #home, #map").mouseout(function(){
+			$(this).removeClass("rollover");
+		});
+	});
+	$(document).ready(function () {
+		$("a[href='#']").children().addClass("rollover");
+	});
+	</script>
+
+	<!-- Click will validate camera --> 
+	<script>
+	$(document).ready(function () {
+	    $("li").click(function () { 
+	    	var name=$(this).attr("id");
+	    	addFilenames(name);
+	    	getFilecamName();
+	    });
+    });
+	</script>
+
+	<script>
+	$(document).ready(function () {
+    	getFilecamName();
+    });
+	</script>
+
+	<script>
+	$(document).ready(function () {
+	    $("#dropzone").click(function () { 
+			window.location.href = "index.html";
+	    });
+    });
+	</script>
+
+
+</head>
+
+<body>
+
+<!--[if lt IE 7]>
+	<script type="text/javascript">
+	alert ("Still using an old version of Internet Explorer!\nTo see our site correctly, please update it\n or maybe you can install Google Chrome or Firefox.")
+	</script>
+<![endif]-->	
+
+<div class="container" id="container">	
+
+	<!--Menu bar at top of page -->
+	<div class="menu" id="menu">
+		<a class="linktab" href="about.html">
+			<div class="about" id="about">
+			about
+			</div>
+		</a>
+		<a class="linktab" href="index.html">
+			<div class="home" id="home">
+			home
+			</div>
+		</a>
+		<a class="linktab" href="#">
+			<div class="cameras" id="cameras">
+			cameras
+			</div>
+		</a>
+		<a class="linktab" href="map.html">
+			<div class="map" id="map">
+			map
+			</div>
+		</a>
+		<div class="productname" id="productname">
+			Traffic Cams Dublin
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+
+	<div class="dropzone" id="dropzone">
+		Camera?
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="container3">
+		Dublin City Council
+		<ul>
+			<li id="Site0Camera10">The Quays from Liberty Hall</li>
+			<li id="Site0Camera100">N11 Fosters</li>
+			<li id="Site0Camera101">N11 Mont Merrion</li>
+			<li id="Site0Camera102">N11 Kilmacud Rd</li>
+			<li id="Site0Camera103">N11 Trees Road</li>
+			<li id="Site0Camera104">N11 Newtownpark Avenue</li>
+			<li id="Site0Camera105">N11 Kill Lane</li>
+			<li id="Site0Camera106">N11 Clonkeen</li>
+			<li id="Site0Camera107">N11 Johnstown</li>
+			<li id="Site0Camera108">N11 Wyattville</li>
+			<li id="Site0Camera109">M1 Balbriggan</li>
+			<li id="Site0Camera110">M1 Airport</li>
+			<li id="Site0Camera111">M1 Drynam</li>
+			<li id="Site0Camera112">M1 Malahide Estuary</li>
+			<li id="Site0Camera113">M1 Lissenhall</li>
+			<li id="Site0Camera122">North Wall Quay</li>
+			<li id="Site0Camera127">Guild Street-Mayor Street</li>
+			<li id="Site0Camera131">Constitution Hill</li>
+			<li id="Site0Camera135">Dublin Port Tunnel Toll Plaza</li>
+			<li id="Site0Camera136">Samuel Beckett Bridge</li>
+			<li id="Site0Camera137">Sir John Rogersons Quay</li>
+			<li id="Site0Camera139">Guild Street-Seville Place</li>
+			<li id="Site0Camera15">John's Road-SCR</li>
+			<li id="Site0Camera163">John's Road West</li>
+			<li id="Site0Camera21">Dame Street from Civic Offices</li>
+			<li id="Site0Camera22">North Quays from Civic Offices</li>
+			<li id="Site0Camera23">Pearse Street</li>
+			<li id="Site0Camera24">North Strand Road</li>
+			<li id="Site0Camera27">Drumcondra Road</li>
+			<li id="Site0Camera31">Harolds Cross Bridge</li>
+			<li id="Site0Camera32">Cabra Road</li>
+			<li id="Site0Camera6">O'Connell Bridge</li>
+			<li id="Site0Camera66">Longmile Road</li>
+			<li id="Site0Camera71">M50 Blanchardstown Roundabout</li>
+			<li id="Site0Camera73">M50 Ballinteer</li>
+			<li id="Site0Camera74">M50 Edmondstown</li>
+			<li id="Site0Camera75">M50 Firhouse</li>
+			<li id="Site0Camera77">M50 Tallaght</li>
+			<li id="Site0Camera78">M50 Ballymount</li>
+			<li id="Site0Camera79">M50 Red Cow</li>
+			<li id="Site0Camera80">M50 Red Cow Slip</li>
+			<li id="Site0Camera81">M50 Greenhills Park</li>
+			<li id="Site0Camera82">M50 Lucan</li>
+			<li id="Site0Camera85">Naas road Newlands cross</li>
+			<li id="Site0Camera87">M50 South of Finglas Roundabout</li>
+			<li id="Site0Camera91">N32 Malahide Road</li>
+			<li id="Site0Camera94">M1 M50</li>
+			<li id="Site0Camera95">M1 Port Tunnel Works</li>
+			<li id="Site0Camera96">M50 Ballymun</li>
+		</ul>
+		<br>
+		South Dublin County Council
+		<ul>
+			<li id="Bawneouge">Nangor Rd/Bawneouge Jtn</li>
+			<li id="BelgardAirton">Belgard Airton</li>
+			<li id="belgardcook">Belgard Cookstown</li>
+			<li id="belgardmayberry">Belgard Mayberry</li>
+			<li id="BelgardSqE">Belgard Sq East</li>
+			<li id="Castleroad">Castle Road/ORR</li>
+			<li id="Deansrath">Nangor Rd/Deansrath Jtn</li>
+			<li id="FonthillRon">Fonthill/Ronanstown</li>
+			<li id="Greenhillsairton">Greenhills Airton</li>
+			<li id="Greenhillsmayberry">Greenhills Mayberry</li>
+			<li id="Greenhillstallaght">Greenhills Tallaght</li>
+			<li id="Greenhillstymon">Greenhills Tymon</li>
+			<li id="Jobstown">Jobstown</li>
+			<li id="killen">Nangor Road/Killeen</li>
+			<li id="liffeyvalley">Fonthill/Liffey Valley</li>
+			<li id="Lucanwood">Lucan Rd at Woodvale</li>
+			<li id="m50redcow">M50 Red Cow</li>
+			<li id="N4newcastle">N4 Newcastle</li>
+			<li id="N7citywest">N7 City West Junction</li>
+			<li id="N7Longmile">N7 Longmile</li>
+			<li id="N81belgard">N81 Belgard Rd</li>
+			<li id="N81Citywest">N81 Citwest</li>
+			<li id="N81Greenhills">N81 Greenhills</li>
+			<li id="N81oldbawn">N81 Oldbawn</li>
+			<li id="N81white">N81 Whitestown</li>
+			<li id="ORRFetter">ORR Fettercairn</li>
+			<li id="ORRFox">ORR at Foxhunter</li>
+			<li id="ORRGrange">ORR Grange Castle</li>
+			<li id="ORRnangor">ORR Nangor</li>
+			<li id="Parkwest">Nangor Park West Junction</li>
+			<li id="Rathcoole">N7 Rathcoole</li>
+			<li id="Tallaghtluas">Tallaght Luas</li>
+			<li id="Yellowmeadows">Nangor Rd Yellowmeadows Junction</li>
+		</ul>
+		<br>		
+		N.R.A.
+		<ul>
+			<li id="0317578d_ff79c3da_cam1">N22 Macroom</li>
+			<li id="0318063f_ff81cd24_cam1">N25 Middleton</li>
+			<li id="0318cbbb_008c3c9c_cam1">N22 Ballyvourney</li>
+			<li id="0319b3ef_ff70fdc2_cam1">N22 Killarney</li>
+			<li id="031a9034_ff8b6a14_cam1">N25 Dungarvan</li>
+			<li id="031bafbf_ff7f7dc8_cam1">N72 Fermoy</li>
+			<li id="031da1cb_0076676a_cam1">M8 Mitchelstown</li>
+			<li id="031dcd32_ff7b9443_cam1">N20 Charleville</li>
+			<li id="031df66e_ff9d70e1_cam1">N25 Wexford</li>
+			<li id="031f0045_ff71b74e_cam1">N13 Abbeyfeale</li>
+			<li id="031f015b_ff8a178a_cam1">N24 Clonmel</li>
+			<li id="032169ad_ff9bde52_cam1">N11 Enniscorthy</li>
+			<li id="032184cd_ff7844d2_cam1">N21 Rathkeale Bypass</li>
+			<li id="032237d7_ff809c3d_cam1">N24 Pallas Green</li>
+			<li id="0322e573_ff916633_cam1">N10 Kilkenny</li>
+			<li id="03237e72_ff7877d2_cam1">N18 Limerick Tunnel South</li>
+			<li id="0323b008_00603651_cam1">N8 Two Mile Borris</li>
+			<li id="0325648e_ffa1c3a7_cam1">N11 Arklow Bypass</li>
+			<li id="0326f2c7_ff79d30b_cam1">Clonmacken link Rd</li>
+			<li id="0328eb55_ff90e0bc_cam1">M7 Portlaoise Bypass</li>
+			<li id="0328fb9c_ff9aad6a_cam1">N81 Baltinglass</li>
+			<li id="032b5e81_0066edd4_cam1">M7 Newbridge Bypass</li>
+			<li id="032b7660_007297f0_cam1">M6 Glennascaul</li>
+			<li id="032b9d70_0077a100_cam1">M6 West Ballinasloe</li>
+			<li id="032bfe02_ffa285e1_cam1">N11 Bray Bypass</li>
+			<li id="032cda47_ff9dd289_cam1">N81 Tallaght</li>
+			<li id="032e6995_ff9ec02a_cam1">M50 Blanch</li>
+			<li id="032ef7ba_00580d52_cam1">M50 Dublin Airport</li>
+			<li id="032faac4_ff6e72b7_cam1">N59 Connemara</li>
+			<li id="03318948_ff78fe5e_cam1">N17 Tuam</li>
+			<li id="03322130_ff9a2a1f_cam1">M3 Kilcarn</li>
+			<li id="03323d67_0071e1a5_cam1">N4 Ballinalack</li>
+			<li id="0333b817_ff9e62da_cam1">M1 Drogheda Bypass</li>
+			<li id="03340866_ff892c14_cam1">N4 Longford Bypass</li>
+			<li id="0335f618_ff936cdc_cam1">N3 Cavan</li>
+			<li id="0336124e_007dde39_cam1">N61 Elphin</li>
+			<li id="0336e5ef_006570f8_cam1">N2 Reaghstown</li>
+			<li id="0338bde6_ff8f5906_cam1">N3 Butlers Bridge</li>
+			<li id="0339afed_ff722711_cam1">N59 Ballina</li>
+			<li id="033a1070_ff7f1030_cam1">N4 Collooney Bypass</li>
+			<li id="033d50b0_006a3f70_cam1">N2 Emyvale</li>
+			<li id="033f1414_ff80de6d_cam1">N15 Bundoran</li>
+			<li id="034425d2_ff8b1572_cam1">N15 Killygordon</li>
+			<li id="0347de83_ff8eefc6_cam1">N13 Grianan of Aileach</li>
+			<li id="0347e95c_ff832632_cam1">N56 Gweedore</li>
+		</ul>
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="ad_mobile" id="ad_mobile">
+		<script type="text/javascript"><!--
+		  // XHTML should not attempt to parse these strings, declare them CDATA.
+		  /* <![CDATA[ */
+		  window.googleAfmcRequest = {
+		    client: 'ca-mb-pub-0058068697090854',
+		    format: '320x50_mb',
+		    output: 'html',
+		    slotname: '8950700253',
+		  };
+		  /* ]]> */
+		//--></script>
+		<script type="text/javascript"    src="http://pagead2.googlesyndication.com/pagead/show_afmc_ads.js"></script>
+	</div>
+
+</div>
+</body>
+</html>

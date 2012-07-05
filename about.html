@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Dublin Traffic Cams</title>
+	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+	<meta name="description" content="Traffic Cams Dublin" />
+	<meta name="keywords" content="Dublin, traffic, camera, livedrive, AA roadwatch, traffic cams" />
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+	<script src="js/jquery-1.6.1.min.js"></script>
+
+	<!--Database scripting, based on html5rocks example-->
+	<script src="js/database.js"></script>
+	
+	<!--Analytics-->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23963982-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!-- Script to create tabs with rollover, insert all id as parameters -->
+	<script>
+	$(document).ready(function () {
+		$("#home, #cameras, #map").mouseover(function(){
+			$(this).addClass("rollover");
+		});
+		$("#home, #cameras, #map").mouseout(function(){
+			$(this).removeClass("rollover");
+		});
+	});
+	$(document).ready(function () {
+		$("a[href='#']").children().addClass("rollover");
+	});
+	</script>
+
+	<!-- Plus One Script -->
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+</head>
+
+<body>
+	
+<!--[if lt IE 7]>
+	<script type="text/javascript">
+	alert ("Still using an old version of Internet Explorer!\nTo see our site correctly, please update it\n or maybe you can install Google Chrome or Firefox.")
+	</script>
+<![endif]-->	
+
+<div class="container" id="container">
+
+	<!--Menu bar at top of page -->
+	<div class="menu" id="menu">
+		<a class="linktab" href="#">
+			<div class="about" id="about">
+			about
+			</div>
+		</a>
+		<a class="linktab" href="index.html">
+			<div class="home" id="home">
+			home
+			</div>
+		</a>
+		<a class="linktab" href="camera.html">
+			<div class="cameras" id="cameras">
+			cameras
+			</div>
+		</a>
+		<a class="linktab" href="map.html">
+			<div class="map" id="map">
+			map
+			</div>
+		</a>
+		<div class="productname" id="productname">
+			Traffic Cams Dublin
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+
+	<div class="about_text" id="about_text">
+		<div class="header" id="header">
+			Traffic Cams Dublin
+		</div>
+		
+		<div class="main_text" id="main_text">
+			HTTP version of the Android app: Traffic Cam Dublin (<em>wip, to be released</em>)<br>
+			<br>
+			<strong>Instructions:</strong> Click "cameras" to select views, click on image to enter in animation mode.<br>
+			Do you want to tell us something, follow us on Twitter: <a class="linktext" href="http://twitter.com/#!/dubtrafficcams" target="_blank">@DubTrafficCams</a>. Use this <a href="http://goo.gl/2aAsl" target="_blank"><strong>form</strong> to report problems.</a><br>
+			<br>
+			Brought to you by: <a href="http://twitter.com/#!/ankhwatcher" target="_blank">Rory Glynn</a>, 
+			<a href="http://twitter.com/#!/donall" target="_blank">Donall O' Donoghue</a>, 
+			Jean Joswig, 
+			<a href="http://twitter.com/raphaelsavina" target="_blank">Rapha&euml;l Savina</a><br>
+			<br>
+			<!-- Plus one button -->
+			<g:plusone size="small"></g:plusone><br>
+			<br>
+			Images from <a href="http://www.dublincity.ie/dublintraffic/" target="_blank">Dublin City Council</a>, <a href="http://traffic.southdublin.ie/traffic_cams/traffic_cameras.aspx" target="_blank">South Dublin County Council</a> and <a href="http://www.nratraffic.ie/cams/default.asp" target="_blank">NRA</a>.<br>
+			PSI data used under EU Directive 2003/98/EC, Statutory Instrument 279 of 2005.<br>
+			<br>
+			<strong>Disclaimer:</strong> We're fetching images every few minutes, but each County Councils have random refresh rates. This can explain large time gaps between images.<br>
+			All information presented within this site is intended for educational purposes. All product names and trademarks mentioned in any part of the website belong to their respective owners. The information on this page may NOT be accurate, therefore you should NOT take any of the content as a source of reference for any reason whatsoever! All information contained within this website is not to be used without written authorization (You will get it, just ask). By using the site you agree to our terms.<br>
+			<br>
+			<a href="sitemap.html">Sitemap</a>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="ad_desktop" id="ad_desktop">
+		<!--Desktop Ad-->	
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-0058068697090854";
+		/* traffic.savina.net */
+		google_ad_slot = "6293632904";
+		google_ad_width = 234;
+		google_ad_height = 60;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	</div>
+</div>
+
+</body>
+</html>
